@@ -13,6 +13,7 @@ import Home from "./sidebar/Home";
 import GeneralRules from "./sidebar/GeneralRules";
 import UniverseBuilder from "./sidebar/UniverseBuilder";
 import Chart from "./Chart/Chart";
+import DesignNewStrategy from "./sidebar/DesignNewStrategy";
 
 function App() {
   const [link, setLink] = useState("Home");
@@ -21,9 +22,9 @@ function App() {
   return (
     <div>
       {/* ✅ HOME PAGE */}
+      <Navbar link = {link} setLink = {setLink}/>
       {link === "Home" && (
         <div className="App">
-          <Navbar />
           <div className="slides">
             <Slides />
           </div>
@@ -68,7 +69,7 @@ function App() {
           <Sidebar page={page} setPage={setPage} setLink={setLink} />
 
           {page === "Home" && <Home />}
-          {page === "General Rules" && <GeneralRules />}
+          {page === "Design New Strategy" && <DesignNewStrategy/>}
           {page === "Universe Builder" && <UniverseBuilder />}
         </div>
       )}

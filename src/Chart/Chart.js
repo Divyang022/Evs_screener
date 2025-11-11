@@ -1,7 +1,7 @@
 import React from 'react';
 import Graph from './Graph';
 import download_image from "../components/images/download.png"
-
+import IndexSelector from './IndexSelector';
 
 function Chart() {
   return (
@@ -39,7 +39,8 @@ function Chart() {
             paddingBottom: "20px",
           }}
         >
-          <span >Evalueserve Tech Index 50</span>
+          
+          <IndexSelector></IndexSelector>
         </h2>
         <br></br>
 

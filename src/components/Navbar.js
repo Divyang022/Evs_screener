@@ -2,29 +2,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import logo from "./images/evs_logo.png";
 
-function Navbar() {
+function Navbar({link, setLink}) {
   return (
     <nav
-      className="navbar navbar-expand-lg fixed-top px-3 blurred"
+      className="navbar navbar-expand-lg px-3 blurred"
       style={{
         minHeight: "100px",
-        backgroundColor: "white",
-        // backdropFilter: "blur(3px)"
+        backgroundColor:`${link === "Home"? "white":"rgba(99, 73, 130, 1)"}`,
+        position: "sticky",
+        top: 0,
+        left: 0,
+        width: "100%",
+        zIndex: 5
       }}
-    >
+      >
       <div className="container-fluid">
         {/* Brand on the left */}
-        <a className="navbar-brand d-flex align-items-center" href="#">
+        <a className="navbar-brand d-flex align-items-center" href="#" onClick={() => setLink("Home")}>
           <img
             src={logo}
             alt="Company Logo"
             width="50"
             height="50"
             className="d-inline-block align-text-top" // spacing between logo & text
-          />
+            />
           <div id="nav-title">
-            <span className="fw-bold me-2"   style={{ fontSize: "25px" }} >EVALUESERVE</span>
-            <span >IndexElevate</span>
+            <span className="fw-bold me-2"   style={{color:`${link === "Home"? "black": "white"}`, fontSize: "25px" }} >EVALUESERVE</span>
+            <span style={{color:`${link === "Home"? "black": "white"}`}}>IndexElevate</span>
           </div>
         </a>
 

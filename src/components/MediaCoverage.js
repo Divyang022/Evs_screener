@@ -5,7 +5,6 @@ import building from "./images/building.jpg";
 import bar from "./images/investing_facts_cover.jfif";
 import ai from "./images/AI.png"
 import analytics from "./images/analytics.png"
-import gen_img from "./images/big-pic.png";
 import calc from "./images/calculations.webp"
 
 export default function MediaCoverage() {
