@@ -42,6 +42,9 @@ function Chart() {
           
           <IndexSelector></IndexSelector>
         </h2>
+        <p style={{width: "150%"}}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime possimus praesentium aperiam quam suscipit voluptates pariatur at libero perferendis?
+        </p>
         <br></br>
 
         {/* Clickable text items */}

@@ -19,6 +19,7 @@ import Analytics from "./SidebarIndexTools/Analytics";
 import DailyCalculations from "./SidebarIndexTools/DailyCalculations";
 import OnboardNewIndex from "./SidebarIndexTools/OnboardNewIndex";
 import Rebalance from "./SidebarIndexTools/Rebalance";
+import EmptyPage from "./sidebar/EmptyPage";
 function App() {
   const [link, setLink] = useState("Home");
   const [page, setPage] = useState("Home");
@@ -36,32 +37,15 @@ function App() {
           <div
             className="d-flex flex-row justify-content-evenly"
             style={{
-              marginTop: "-100px",
+              marginTop: "-150px",
             }}
           >
             <Cards title="Pre-built Screen" image={preBuilt} />
             <Cards title="Create custom filter" image={customImg} />
           </div>
 
-          <div className="d-flex flex-row mb-3 justify-content-evenly">
-            <button onClick={() => setLink("Screener")} id="screener-link">
-              STOCKS SCREENER
-            </button>
-          </div>
+          <MediaCoverage setLink={setLink} setPage={setPage} />
 
-          <div className="d-flex flex-row mb-3 justify-content-evenly">
-            <button
-              onClick={() => {
-                setLink("IndexTools");
-                setPage("Onboard New Index"); // ✅ default page
-              }}
-              id="screener-link"
-            >Index Button</button>
-          </div>
-
-          <MediaCoverage />
-
-          {/* ✅ Indices section ONLY on Home page */}
           <div className="indices-wrapper">
             <p className="title">Indices</p>
             <p className="subtitle">
@@ -70,8 +54,6 @@ function App() {
               insurance industry."
             </p>
           </div>
-
-          {/* ✅ Chart also only on Home */}
           <Chart />
         </div>
       )}
@@ -79,11 +61,12 @@ function App() {
       {/* ✅ SCREENER PAGE */}
       {link === "Screener" && (
         <div id="home-root">
-          <Sidebar page={page} setPage={setPage} setLink={setLink} />
+          <Sidebar page={page} setPage={setPage} setLink={setLink} link={link}/>
 
           {page === "Home" && <Home1 />}
           {page === "Design New Strategy" && <DesignNewStrategy />}
           {page === "Universe Builder" && <UniverseBuilder />}
+          {page === "EmptyPage" && <EmptyPage/>}
         </div>
       )}
 
@@ -96,6 +79,37 @@ function App() {
           {page === "Daily Calculations" && <DailyCalculations />}
           {page === "Rebalance" && <Rebalance />}
           {page === "Analytics" && <Analytics />}
+        </div>)
+      }
+      {link === "Reporting and Analytics" && (
+        <div id="home-root">
+          <Sidebar page={page} setPage={setPage} setLink={setLink} link={link}/>
+
+          {page === "Onboard New Index" && <OnboardNewIndex/>}
+          {page === "Daily Calculations" && <DailyCalculations />}
+          {page === "Rebalance" && <Rebalance />}
+          {page === "Analytics" && <Analytics />}
+          {page === "EmptyPage" && <EmptyPage/>}
+        </div>)
+      }{link === "Portfolio Managment Services" && (
+        <div id="home-root">
+          <Sidebar page={page} setPage={setPage} setLink={setLink} link={link}/>
+
+          {page === "Onboard New Index" && <OnboardNewIndex/>}
+          {page === "Daily Calculations" && <DailyCalculations />}
+          {page === "Rebalance" && <Rebalance />}
+          {page === "Analytics" && <Analytics />}
+          {page === "EmptyPage" && <EmptyPage/>}
+        </div>)
+      }{link === "AI Lab" && (
+        <div id="home-root">
+          <Sidebar page={page} setPage={setPage} setLink={setLink} link={link}/>
+
+          {page === "Onboard New Index" && <OnboardNewIndex/>}
+          {page === "Daily Calculations" && <DailyCalculations />}
+          {page === "Rebalance" && <Rebalance />}
+          {page === "Analytics" && <Analytics />}
+          {page === "EmptyPage" && <EmptyPage/>}
         </div>
       )}
     </div>

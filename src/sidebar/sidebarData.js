@@ -1,9 +1,16 @@
-export const data = [{
+export const allData = [{
     "name": "Home",
-    "type": "tab"
+    "type": "tab",
+    "link": "Screener"
 },
 {
     "name": "Design New Strategy",
-    "type": "tab"
+    "type": "tab",
+    "link": "Screener"
+},
+{
+    "name": "Design New Strategy",
+    "type": "tab",
+    "link": "Reporting and Analytics"
 },
 ]

@@ -69,7 +69,7 @@ const barOptions = {
 
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px" , width: "70%"}}>
       {/* ✅ TOP: Pie Chart + 2 Text Areas */}
       <div
         style={{

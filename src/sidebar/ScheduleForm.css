@@ -30,3 +30,37 @@
   border-radius: 2px;
   font-size: 14px;
 }
+select {
+  appearance: none; /* Remove default browser styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #333;
+  width: 160px; /* Consistent width */
+  height: 32px; /* Uniform height */
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and focus states */
+select:hover {
+  border-color: #6a1b9a; /* Purple theme accent */
+}
+
+select:focus {
+  outline: none;
+  border-color: #6a1b9a;
+  box-shadow: 0 0 4px rgba(106, 27, 154, 0.4);
+}
+
+/* Optional: Add a custom dropdown arrow */
+select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'><path fill='%236a1b9a' d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}

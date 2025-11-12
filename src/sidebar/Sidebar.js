@@ -1,11 +1,9 @@
-import {data} from './sidebarData'
+import {allData} from './sidebarData'
 
-export default function Sidebar({page, setPage, setLink}){
+export default function Sidebar({page, setPage, setLink, link}){
+    const data = allData.filter(ele => ele.link === link)
     return(
         <div className="Sidebar">
-            {/* <div className='sidebar-title' onClick={()=>setLink("Home")}>
-                EVALUESERVE SCREENER
-            </div> */}
             <ul className="Sidebar-list">
                 {
                     data.map(ele => 
